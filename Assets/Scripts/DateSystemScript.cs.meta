@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b236c97d6d4fce5438934463d02712bb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - DayDateInput: {instanceID: 0}
+  - YearDateInput: {instanceID: 0}
+  - MonthDateInput: {instanceID: 0}
+  - AddDate: {instanceID: 0}
+  - Go_ToDate: {instanceID: 0}
+  - CalenderIcon: {instanceID: 0}
+  - NullCanvas: {fileID: 630369808207526169, guid: de4793271d6d11d418ba3a715bdb4c47, type: 3}
+  - currentCanvas: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
