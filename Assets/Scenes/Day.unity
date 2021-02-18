@@ -833,9 +833,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6306406231405879292, guid: fe77e244d0328e94fb9671e0ebe09463, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6306406231405879293, guid: fe77e244d0328e94fb9671e0ebe09463, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306406231405879294, guid: fe77e244d0328e94fb9671e0ebe09463, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6306406231645576509, guid: fe77e244d0328e94fb9671e0ebe09463, type: 3}
       propertyPath: m_AnchorMax.x
@@ -917,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6306406232628874580, guid: fe77e244d0328e94fb9671e0ebe09463, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00015217665
+      value: -0.00045376117
       objectReference: {fileID: 0}
     - target: {fileID: 6306406232628874581, guid: fe77e244d0328e94fb9671e0ebe09463, type: 3}
       propertyPath: m_IsActive
