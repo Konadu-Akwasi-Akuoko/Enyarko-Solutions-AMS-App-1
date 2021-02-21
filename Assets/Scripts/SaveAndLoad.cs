@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TigerForge;
 
+
 public class SaveAndLoad : MonoBehaviour
 {
     //This int will contain the values and to help 
@@ -48,20 +49,20 @@ public class SaveAndLoad : MonoBehaviour
         SaveInstanceMovement = new EasyFileSave("my_save_movement_list");
         
         dateSysScript = GameObject.FindWithTag("DateSystem").GetComponent<DateSystemScript>();
+
+
     }
 
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Delete))
         {
-
             // Delete this file.
             // This method clears stored data as well.
-
             SaveInstaceFuel.Delete();
-
             Debug.Log(">> The file has been deleted." + "\n");
         }
+
         if (Input.GetKeyUp(KeyCode.L))
         {
             Debug.Log("L is pressed");
@@ -74,6 +75,7 @@ public class SaveAndLoad : MonoBehaviour
                 Debug.LogFormat("Key={0},Value={1}", kvp.Key, kvp.Value);
             }
         }
+
     }
 
     //This function and its subsequent functions add the list of things to save to 
