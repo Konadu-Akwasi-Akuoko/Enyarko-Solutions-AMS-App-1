@@ -352,4 +352,10 @@ public class DateSystemScript : MonoBehaviour
         contentManamger.MovementCalculator();
         */
     }
+
+    public void RemoveInput()
+    {
+        contentManamger.RemoveSpecificInputField();
+    }
+
 }

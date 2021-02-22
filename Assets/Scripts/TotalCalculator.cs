@@ -43,4 +43,9 @@ public class TotalCalculator : MonoBehaviour
     {
         contentManager.OperatorCalculator();
     }
+
+    public void RemoveInput()
+    {
+        contentManager.RemoveSpecificInputField();
+    }
 }

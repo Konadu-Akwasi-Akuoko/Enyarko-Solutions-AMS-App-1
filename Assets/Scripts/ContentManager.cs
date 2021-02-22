@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using TigerForge;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class ContentManager : MonoBehaviour
 {
@@ -84,14 +85,14 @@ public class ContentManager : MonoBehaviour
         GameObject newInputField = Instantiate(InputField, transform);
 
         //Caching the gameobjects, so that the it can be accessed by the text fields.
-        GameObject Fuel, Arrival, Departure, Movement,A_T,Operator;
+        GameObject Fuel, Arrival, Departure, Movement,A_T,Operator,RemoveButton;
         Fuel = newInputField.transform.GetChild(2).gameObject;
         Arrival = newInputField.transform.GetChild(3).gameObject;
         Departure = newInputField.transform.GetChild(4).gameObject;
         Movement = newInputField.transform.GetChild(5).gameObject;
         A_T = newInputField.transform.GetChild(0).gameObject;
         Operator = newInputField.transform.GetChild(1).gameObject;
-
+        RemoveButton = newInputField.transform.GetChild(6).gameObject;
 
         //Get the text field of the various gameobjects.
         FuelInput = Fuel.GetComponent<TMP_InputField>();
@@ -114,12 +115,42 @@ public class ContentManager : MonoBehaviour
 
         //Changing the name of the gameobject instance to something specific.
         newInputField.name = "inputField " + InputFieldCalculator.ToString();
+        //Change the name of the RemoveButton to the name of the inputField.
+        RemoveButton.name = "inputField " + InputFieldCalculator.ToString();
+    }
 
-        /*
-        if (SaveFuelList.Count == FuelTotalList.Count && CheckLoadOfInputField == false)
+    public void RemoveSpecificInputField()
+    {
+        if (InputFieldCalculator != 0)
         {
-            PopulateInputField();
-        }*/
+            //Get's the current selected the name of the UI, thus the removeButton.
+            string nameOfInputField = EventSystem.current.currentSelectedGameObject.name;
+            //Search in the names in list of instantiated inputLists.
+            foreach(GameObject inputField in ListOfInstantiatedInputFields)
+            {
+                if (inputField.name == nameOfInputField)
+                {
+                    //Getting the position of specific inputField to remove them from the lists.
+                    int positionOfInputField = ListOfInstantiatedInputFields.IndexOf(inputField);
+                    ListOfInstantiatedInputFields.RemoveAt(positionOfInputField);
+                    FuelTotalList.RemoveAt(positionOfInputField);
+                    ArrivalTotalList.RemoveAt(positionOfInputField);
+                    DepartureTotalList.RemoveAt(positionOfInputField);
+                    MovementTotalList.RemoveAt(positionOfInputField);
+                    //Recalculating the decrementor and the total values of each field...
+                    InputCalculatorDecrementor();
+                    FuelCalculator();
+                    ArrivalCalculator();
+                    DepartureCalculator();
+                    MovementCalculator();
+                    A_TCalculator();
+                    OperatorCalculator();
+                    //Destroy the selected inputField.
+                    Destroy(inputField);
+                    return;
+                }
+            }
+        }
     }
 
     //Remove the last InputField from the content viewport,and update the InputFieldCalculator.
