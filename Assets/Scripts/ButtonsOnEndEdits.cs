@@ -6,7 +6,7 @@ public class ButtonsOnEndEdits : MonoBehaviour
 {
     //
     public DateSystemScript dateSystemScript;
-
+    
     // Start is called before the first frame update
     void Start()
     {
